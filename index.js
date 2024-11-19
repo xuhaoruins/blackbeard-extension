@@ -4,7 +4,7 @@ import { Readable } from "node:stream";
 
 const app = express()
 
-app.post("/", express.json(), async (req, res) => {
+app.post("/agent", express.json(), async (req, res) => {
   // Identify the user, using the GitHub API token provided in the request headers.
   const tokenForUser = req.get("X-GitHub-Token");
   const octokit = new Octokit({ auth: tokenForUser });
